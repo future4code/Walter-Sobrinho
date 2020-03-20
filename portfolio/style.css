@@ -1,0 +1,107 @@
+    * {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        background-color: #033E8C;
+        color: white;
+        text-align: center;
+    }
+    
+    header {
+        background-color: #0442BF;
+        width: 100%;
+        border-radius: 10px;
+        height: 200px;
+    }
+    
+    h1 {
+        display: inline;
+        position: relative;
+        left: 400px;
+        color: white;
+        background-color: #0442BF;
+    }
+    
+    .hover-div {
+        background-color: #0442BF;
+        display: inline-block;
+        margin: 0;
+        top: o;
+        left: 0;
+        position: relative;
+    }
+    
+    .hover-menu {
+        display: none;
+        position: absolute;
+        background-color: #033E8C;
+        z-index: 1;
+    }
+    
+    .hover-menu a {
+        color: white;
+        padding: 10px;
+        text-decoration: none;
+        display: block;
+        background-color: #0433BF;
+    }
+    
+    .hover-menu a:hover {
+        background-color: #260101;
+    }
+    
+    .hover-div:hover .hover-menu {
+        display: block;
+    }
+    
+    .hover-div:hover {
+        background-color: #260101;
+    }
+    
+    .button-menu {
+        border-style: none;
+    }
+    
+    .header2,
+    .header3 {
+        display: inline-block;
+        background-color: #0442BF;
+    }
+    
+    .header3 img {
+        margin-left: 700px;
+        margin-top: 50px;
+        border-style: solid;
+        border-color: white;
+        border-width: 5px;
+    }
+    
+    .main-div {
+        background-color: #033E8C;
+        width: 100%;
+        border-radius: 10px;
+    }
+    
+    .formation-logos {
+        margin-left: 100px;
+        margin-right: 100px;
+        border-radius: 10px;
+    }
+    
+    .projetos {
+        margin-right: 100px;
+        margin-left: 100px;
+        border-radius: 10px;
+    }
+    
+    #octa-head h1 {
+        margin-left: -50vw;
+    }
+    
+    iframe {
+        height: 600px;
+        width: 1200px;
+    }
+    
+    .skills {
+        margin-left: 40px;
+        margin-right: 40px;
+    }
