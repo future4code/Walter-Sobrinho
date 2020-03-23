@@ -10,6 +10,10 @@
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
 }
 
+*:focus {
+    outline: none;
+}
+
 h2 {
     background-color: #fe7e02;
     padding: 10px 5px 10px 5px;
@@ -33,6 +37,14 @@ button:focus {
 img {
     width: 50px;
     height: 50px;
+}
+
+img:hover {
+    opacity: 40%;
+}
+
+img:active {
+    opacity: 100%;
 }
 
 div>p:first-child {
@@ -156,6 +168,9 @@ td button:active {
     border-radius: 5px;
     font-size: 10px;
     color: black;
+    position: relative;
+    left: 700px;
+    top: 300px;
 }
 
 
