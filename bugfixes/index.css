@@ -74,11 +74,12 @@ div img {
     color: white;
 }
 
-#container-de-descricao>p,
+#container-de-descricao>pre,
 ol,
 h3 {
     position: relative;
     top: 150px;
+    margin: auto;
 }
 
 #container-de-descricao>ol {
