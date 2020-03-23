@@ -7,6 +7,7 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
 }
 
 h2 {
@@ -49,9 +50,11 @@ div img {
     border-radius: 5px;
     font-size: 20px;
     color: white;
+    display: block;
     position: relative;
-    top: -14px;
-    padding-top: 2px;
+    left: 600px;
+    top: 150px;
+    text-decoration: none;
 }
 
 .botao-amarelo:hover {
@@ -100,6 +103,11 @@ h3 {
     color: #c44f00;
     padding: 100px 0;
     font-size: 60px;
+}
+
+p {
+    position: relative;
+    top: 50px;
 }
 
 
@@ -154,4 +162,8 @@ td button:active {
 }
 #back-button:hover {
     background-color: #635a3d
+}
+table {
+    position: relative;
+    margin: auto;
 }
