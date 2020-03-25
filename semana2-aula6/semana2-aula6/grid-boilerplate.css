@@ -12,11 +12,16 @@
     
     #item1 {
         background-color: #FF4136;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 3;
         /*Vermelho*/
     }
     
     #item2 {
         background-color: #2ECC40;
+        grid-column: 3 / 4;
         /*Verde*/
     }
     
@@ -27,5 +32,6 @@
     
     #item4 {
         background-color: #FFDC00;
+        grid-column: 2 / 3;
         /*Amarelo*/
     }

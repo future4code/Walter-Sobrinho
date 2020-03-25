@@ -19,11 +19,13 @@ div {
 #item1 {
     width: 100px;
     order: 1;
+    align-self: center;
 }
 
 #item2 {
     width: 80px;
     height: 80px;
+    order: 2;
 }
 
 #item3 {
