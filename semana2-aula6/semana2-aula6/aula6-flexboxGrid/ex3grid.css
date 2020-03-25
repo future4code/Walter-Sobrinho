@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: white;
+}
+
+.main {
+    display: grid;
+    background-color: #ed25bc;
+    height: 35vw;
+    align-items: center;
+}
+
+.lower-avo {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+#lower-mae {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    height: 10vw;
+}
+
+#header-mae {
+    display: grid;
+    height: 3vw;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr;
+}
+
+#lower-irma {
+    display: grid;
+}
+
+#green {
+    display: grid;
+    align-items: center;
+    background-color: #38ca49;
+}
+
+#yellow {
+    display: grid;
+    align-items: center;
+    background-color: yellow;
+}
+
+#blue {
+    display: grid;
+    align-items: center;
+    background-color: #1277d6;
+}
+
+#red {
+    display: grid;
+    align-items: center;
+    background-color: #fc433e;
+}
+
+#lightgreen {
+    display: grid;
+    align-items: center;
+    background-color: #3bfc89;
+}
+
+#purple {
+    display: grid;
+    align-items: center;
+    background-color: #af22c6;
+    height: 4vw;
+}
