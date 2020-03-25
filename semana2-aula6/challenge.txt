@@ -1,0 +1,7 @@
+1. Usamos flexbox quando ainda não temos ideia clara do layout, quando o conteúdo é mais 
+relevante que o design.
+2. Flexbox lida melhor com aspectos unidimensionais, especialmante a horizontalidade, 
+visto que é consideravelmente mais difícil nele centralizar verticalmente um objeto. O grid,
+por sua vez, lida melhor com as duas dimensões.
+3. Usamos o grid quando temos uma ideia bastante clara do layout da página, precisamos de mais
+ferramentas para organizar o conteúdo verticalmente e/ou mais liberdade para movê-los.

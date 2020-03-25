@@ -1,0 +1,31 @@
+1.
+a- git checkout -b nome-da-branch
+b- git commit
+c - git push origin
+d - git pull master
+
+2.
+Elementos block tomam a totalidade da largura da página automaticamente, enquanto elementos
+inline só tomam a largura que precisam. Exemplos de elementos block são: <div>, <p>, <h1>;
+exemplos de elementos inline são: <button>, <input>, <span>.
+
+3.
+a. estabelecendo a posição para relative e ajustando as margens para auto;
+b. estabelecendo a posição como sticky;
+c. escrevendo no CSS:
+
+p, div {
+color: green;
+}
+
+p, div:first-child {
+color: yellow;
+}
+
+p, div:last-child {
+color: blue;
+}
+
+4. Element mostra o código da página, permitindo observar como os elementos da página
+foram escrito, permite também fazer certas alterações no código e ver as alterações
+instantaneamente. O console permite que rodemos um pouco de javascript na página.
