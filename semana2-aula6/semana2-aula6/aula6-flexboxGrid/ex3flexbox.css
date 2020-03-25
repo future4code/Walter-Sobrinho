@@ -1,7 +1,6 @@
 * {
     margin: 0;
     padding: 0;
-    text-align: center;
     color: white;
 }
 
@@ -21,18 +20,18 @@
     align-items: center;
 }
 
-.lower {
-    display: inline;
-}
-
 #lower-mae {
     display: flex;
     height: 10vw;
-    align-items: center;
-    flex-direction: row;
 }
 
-#lower-avo {
+.lower-left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lower-avo {
     display: flex;
 }
 
@@ -40,7 +39,12 @@
     display: flex;
     flex-direction: column;
     width: 25vw;
-    align-content: center;
+}
+
+.lower {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #green {
@@ -77,8 +81,6 @@
     background-color: #af22c6;
     height: 4vw;
     display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 #header-mae {
