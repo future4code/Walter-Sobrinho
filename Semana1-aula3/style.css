@@ -1,7 +1,7 @@
 body {
     background-color:#193441;
 }
-tr, div {
+div {
     background-color: #3E606F;
     color: white;
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -31,7 +31,6 @@ ul {
     display: inline;
 }
 table, div {
-    margin-top: 40px;
     text-align: center;
 }
 dt, dd {
@@ -66,7 +65,7 @@ ol {
 .form-style {
     padding: 1vw;
     background-color: #3E606F;
-    margin-top: 10vw;
+    margin-top: 4vw;
 }
 .label-style {
     border-style: solid;
@@ -81,4 +80,30 @@ ol {
 .input-style {
     padding: 5px;
     margin: 5px;
+}
+.comprar {
+    background-color: #CBDBD7;
+    border: none;
+    padding: 15px 25px;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+}
+#sugestions-div{
+    text-align: left;
+    margin: auto;
+    padding-top: 20px;
+}
+tr, th {
+    background-color: #193441;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-style: solid;
+    border-color: white;
+    border-width: 2px;
+}
+.homediv {
+    display: inline-block;
 }
