@@ -42,7 +42,7 @@ d. "O preço da fruta Pêra é  R$ 5"
 // }
 
 //Exercício 5:
-//a. 
+//a. https://drive.google.com/file/d/18WWAE-sLktCPWmqn84C9Ix6LwAo9h1Mo/view?usp=sharing
 
 
 let vert = prompt("O animal é vertebrado ou invertebrado?")
