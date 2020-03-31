@@ -42,81 +42,61 @@ d. "O preço da fruta Pêra é  R$ 5"
 // }
 
 //Exercício 5:
-{
-    let vert = prompt("O animal é vertebrado ou invertebrado?")
-    let pelos
-    let racional
-    let mami
-    let humano = "É um ser humano."
-    let nHumano = "É um mamífero não humano."
-    let penas
-    let ave = "É uma ave."
-    let nAve
-    let fish = "É um peixe."
-    let periodWater
-    let anfi = "É um anfíbio."
-    let rept = "É um réptil."
-    if (vert === "Vertebrado") {
-        let pelos = prompt("O animal possui pelos? [s/n]")
-        if (pelos === "Sim") {
-            let mami = "É um mamífero."
-            mami
-            let racional = prompt("O animal é racional? [s/n]")
-        }
+//a. 
+
+
+let vert = prompt("O animal é vertebrado ou invertebrado?")
+let pelos = "Sim"
+let racional = "Sim"
+let mami
+let humano = "É um ser humano."
+let nHumano = "É um mamífero não humano."
+let penas
+let ave = "É uma ave."
+let nAve = "Sim"
+let fish = "É um peixe."
+let periodWater
+let anfi = "É um anfíbio."
+let rept = "É um réptil."
+
+
+if (vert === "Vertebrado") {
+    let pelos = prompt("O animal possui pelos? [s/n]")
+    if (pelos === "Sim") {
+        let racional = prompt("O animal é racional? [s/n]")
+
         if (racional === "Sim") {
-            let humano = "É um ser humano."
-            humano
-        } else
-            "É um mamífero não-humano"
-    } else if (pelos === "Não") {
-        let penas = prompt("O animal possui penas? [s/n]")
-        if (penas === "Sim") {
-            let ave = "É uma ave."
-            ave
-        } else {
-            let nAve = prompt("É terrestre?[s/n]")
+            console.log("É um ser humano.")
         }
-        if (nAve = "Sim") {
-            let periodWater = prompt("Passa um período na água?[s/n]")
-        } else {
-            "É um peixe."
+        if (racional === "Não") {
+            console.log("É um mamífero não-humano")
         }
     }
-    if (periodWater = "Sim") {
-        let anfi = "É um anfíbio."
-        anfi
+    if (pelos === "Não") {
+        let penas = prompt("O animal possui penas? [s/n]")
+
+        if (penas === "Sim") {
+            console.log("O animal é uma ave.")
+        }
+        if (penas === "Não") {
+            let nAve = prompt("É terrestre?[s/n]")
+
+            if (nAve === "Não") {
+                console.log("É um peixe.")
+            }
+            if (nAve === "Sim") {
+                let periodWater = prompt("Passa um período na água?[s/n]")
+
+                if (periodWater === "Sim") {
+                    console.log("É um anfíbio")
+                }
+                if (periodWater === "Não") {
+                    console.log("É um réptil.")
+                }
+            }
+        }
+
     } else {
-        let rept = "É um réptil"
-        rept
+        console.log("A classificação serve apenas para animais vertebrados.")
     }
 }
-
-// if (pelos === "Sim") {
-//     let mami = "É um mamífero."
-//     let racional = prompt("O animal é racional? [s/n]")
-// } else {
-//     console.log("Você não digitou uma opção válida")
-// }
-// if (racional === "Sim") {
-//     let humano = "É um ser humano."
-// } else if (racional === "Não") {
-//     let nHumano = "É um mamífero não humano."
-// }
-
-// if (penas === "Sim") {
-//     let ave = "É uma ave."
-// } else if (penas === "Não") {
-//     let nAve = prompt("É terrestre?[s/n]")
-// }
-
-// if (nAve === "Não") {
-//     let fish = ("É um peixe.")
-// } else {
-//     let periodWater = prompt("Passa um período na água?[s/n]")
-// }
-
-// if (periodWater === "Sim") {
-//     let anfi = "É um anfíbio."
-// } else {
-//     let rept = "É um réptil."
-// }
