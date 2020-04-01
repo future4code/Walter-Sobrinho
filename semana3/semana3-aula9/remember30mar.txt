@@ -1,0 +1,14 @@
+1. Determinam, respectivamente, em que coluna um objeto deve inciar 
+e em que linha deve terminar.
+
+2. Unidades relativas estabelecem tamanhos rígidos, i. e., fixo, 
+para seu objeto. Por exemplo, o tamanho de 10cm será sempre 10cm,
+independente de onde for medido. As unidades relativas, por sua vez,
+variam de acordo com algum outro parâmetro. No caso da "em", por exemplo,
+ela varia de acordo com o tamanho da fonte, enquanto "vw" varia de acordo
+com a largura da tela do usuário.
+
+3. Flexbox trabalha somente com uma dimensão, i. e., quando utilizamos essa propriedade,
+ela estabelece autometicamente um eixo principal e um eixo secundário, que mudam se utilizamos
+flex-direction:row ou flex-direction:column; no grid não existe uma dimensão principal nem
+uma secundária, ele trabalha com ambas simultaneamente.
