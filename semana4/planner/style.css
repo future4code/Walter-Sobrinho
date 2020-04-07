@@ -16,10 +16,13 @@ header {
     background-color: #448C30;
     color: white;
     text-align: center;
+    padding-bottom: 20px;
 }
 
 #input {
     border: 2px #82B8D9 solid;
+    height: 2vw;
+    width: 40vw;
 }
 
 main {
@@ -37,11 +40,24 @@ div {
     border-radius: 10px;
     height: 15vh;
     width: 90vw;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 10% 90%;
 }
 
 p {
     margin: 20px;
     text-decoration: underline;
+}
+
+@media only screen and (max-width: 800px) {
+    #input {
+        height: 10vw;
+    }
+
+    div {
+        height: 40vw;
+        grid-template-columns: 80%;
+        grid-template-rows: 30% 70%;
+        justify-content: center;
+    }
 }

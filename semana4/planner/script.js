@@ -24,9 +24,11 @@ function adicionarTarefa () {
         }  else if (dia === "sábado") {
         sabado.innerHTML += "<li>" + input.value + "</li>"
         }
-    document.getElementById(input).reset()
 }
 
+function limparCampo () {
+    document.getElementById("input").value = ""
+}
 // if (novaTarefa === "" || novaTarefa === " "){
 //     alert("Insira uma tarefa para esse dia!")
 // } else {
