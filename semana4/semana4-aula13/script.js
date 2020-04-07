@@ -99,11 +99,15 @@ somaEMultiplicacao ()
 // }
 
 // c.
-let randomArray = ([]) => {
+
+function randomArray ([]) {
     for (i = 0; i < randomArray.length ; i++)
     if (randonArray[i]%2===0) {
+        var newArray = []
         let elemento = randomArray[i]
         elemento.push(newArray)
         return newArray.length
     }
-}   
+}
+
+randomArray = ([10, 20, 30, 40])
