@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Gotu&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <header><h1>planejamento semanal</h1>
+        <input type="text" id="input">
+        <select id="week" name="week">
+            <option>domingo</option>
+            <option>segunda</option>
+            <option>terça</option>
+            <option>quarta</option>
+            <option>quinta</option>
+            <option>sexta</option>
+            <option>sábado</option>
+            </select>
+        <button onClick="adicionarTarefa(); limparCampo()" ">pronto!</button>
+    </header>
+    <main>
+    <div >
+        <p><b>domingo</p></b>
+        <ul id="domingo"></ul>
+    </div>
+    <div>
+        <p><b>segunda</p></b>
+        <ul id="segunda"></ul>
+    </div>
+    <div>
+        <p><b>terça</p></b>
+        <ul id="terca"></ul>
+    </div>
+    <div>
+        <p><b>quarta</p></b>
+        <ul id="quarta"></ul>
+    </div>
+    <div>
+        <p><b>quinta</p></b>
+        <ul id="quinta"></ul>
+    </div>
+    <div>
+        <p><b>sexta</p></b>
+        <ul id="sexta"></ul>
+    </div>
+    <div>
+        <p><b>sábado</p></b>
+        <ul id="sabado"></ul>
+    </div>
+</main>
+</body>
+</html>
