@@ -9,8 +9,10 @@ function adicionarTarefa () {
     const sexta = document.getElementById("sexta");
     const sabado = document.getElementById("sabado");
 
-    if (dia === "domingo") {
-    domingo.innerHTML += "<li>" + input.value + "</li>"
+        if (input.value === "" || input.value === " ") {
+            alert("Digite uma atividade válida!")
+        } else if (dia === "domingo") {
+        adomingo.innerHTML += "<li>" + input.value + "</li>"
         } else if (dia === "segunda") {
         segunda.innerHTML += "<li>" + input.value + "</li>"
         } else if (dia === "terça") {
@@ -29,6 +31,3 @@ function adicionarTarefa () {
 function limparCampo () {
     document.getElementById("input").value = ""
 }
-// if (novaTarefa === "" || novaTarefa === " "){
-//     alert("Insira uma tarefa para esse dia!")
-// } else {
