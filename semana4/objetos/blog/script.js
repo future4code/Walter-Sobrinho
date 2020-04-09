@@ -19,6 +19,11 @@ function botaoPost(ev) {
     meuArray.push(postCompleto.tags.value)
     meuArray.push(postCompleto.post.value)
     console.log(meuArray)
+
+    nome.value = ""
+    titulo.value = ""
+    tags.value = ""
+    post.value = ""
 }
 
 
