@@ -8,7 +8,6 @@
     <title>Future4 Blog</title>
 </head>
 <body>
-    <form>
         <div class="container">
         <label for="nome">Nome</label>
         <input type="text" id="nome" name="nome">
@@ -25,10 +24,9 @@
         <label for="post">Post</label>
         <textarea id="post" nome="post"></textarea>
         </div>
-        <button id="done-button">Post it!</button>
-    </form>
+        <button onclick="botaoPost(event)" id="done-button">Post it!</button>
     <main>
-        <div>
+        <div id="post-area">
                 
         </div>
     </main>
