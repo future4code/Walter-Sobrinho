@@ -1,6 +1,10 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import homeIcon from './imgs/home-icon.png';
+import fireIcon from './imgs/trending-icon.png'
+import subsIcon from './imgs/subs.png'
+import likedIcon from './imgs/liked-icon.png'
+import histoIcon from './imgs/historic.png'
 
 function App() {
   const titulo = "Título do vídeo"
@@ -19,12 +23,27 @@ function App() {
     <main>
         <nav className="menu-vertical">
             <ul>
-                <li className="botoes-meunu-vertical">Início</li>
-                <li className="botoes-meunu-vertical">Em alta</li>
-                <li className="botoes-meunu-vertical">Inscrições</li>
+                <li className="botoes-meunu-vertical">
+                  <img className="nav-icons" src={homeIcon} />
+                  Início
+                  </li>
+                <li className="botoes-meunu-vertical">
+                <img className="nav-icons" src={fireIcon} />
+                Em alta
+                </li>
+                <li className="botoes-meunu-vertical">
+                <img className="nav-icons" src={subsIcon} />
+                Inscrições
+                </li>
                 <hr />
-                <li className="botoes-meunu-vertical">Originais</li>
-                <li className="botoes-meunu-vertical">Histórico</li>
+                <li className="botoes-meunu-vertical">
+                <img className="nav-icons" src={likedIcon} />
+                  Curtidos
+                  </li>
+                <li className="botoes-meunu-vertical">
+                <img className="nav-icons" src={histoIcon} />
+                  Histórico
+                  </li>
             </ul>
         </nav>
         
@@ -63,10 +82,6 @@ function App() {
             </div>
         </section>
     </main>
-
-    <footer>
-        <h4>Oi! Eu moro no footer!</h4>
-    </footer>
 </div>
   );
 }
