@@ -8,6 +8,10 @@ function CardGrande(props) {
             <div>
                 <h4>{ props.nome }</h4>
                 <p>{ props.descricao }</p>
+                <p>{ props.descricao1 }</p>
+                <p>{ props.descricao2 }</p>
+                <p>{ props.descricao3 }</p>
+                <p>{ props.descricao4 }</p>
             </div>
         </div>
     )

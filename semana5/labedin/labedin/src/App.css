@@ -4,10 +4,18 @@
   box-sizing: border-box;
 }
 
-.App {
+aside {
+  width: 80%; 
+}
+
+main {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.App {
+  display: grid;
+  grid-template-columns: 20% 80%;
   margin-top: 30px;
 }
 

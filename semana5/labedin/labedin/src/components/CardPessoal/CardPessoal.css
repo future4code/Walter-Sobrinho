@@ -1,0 +1,22 @@
+.cardpessoal-container {
+    position: fixed;
+    border: solid 1px black;
+    height: 300px;
+    width: 200px;
+    text-align: center;
+}
+
+.cardpessoal-container > img {
+    width: 120px;
+    margin: 10px;
+}
+
+h4 {
+    margin-top:0px;
+    margin-bottom: 10px;
+}
+
+p {
+    text-align: left;
+    margin: 10px;
+}

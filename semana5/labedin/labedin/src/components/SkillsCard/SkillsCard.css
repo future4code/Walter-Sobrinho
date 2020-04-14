@@ -1,0 +1,19 @@
+.language-card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 1px solid black;
+    margin-bottom: 10px;
+    height: 200px;
+}
+
+.language-card-container img {
+    width: 50px;
+    margin-right: 10px;
+}
+
+.language-container {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 10px;
+}
