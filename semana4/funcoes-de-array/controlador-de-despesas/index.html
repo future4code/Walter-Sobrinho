@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        
+    <section id="cadastro">
+        <label for="valor">valor</label>
+        <input type="number" id="input-do-valor">
+        <label for="tipo-de-despesa">tipo</label>
+        <select id="tipo-de-despesa">
+            <option>
+                Cachorro
+            </option>
+            <option>
+                Alimentação
+            </option>
+            <option>
+                Conta de luz
+            </option>
+        </select>
+
+        <textarea id="descricao">
+        </textarea>
+
+        <button onclick="cadastrar()">
+            cadastrar!
+        </button>
+    </section>
+
+    <section id="detalhes">
+
+        <select id="tipo-de-despesa2">
+            <option value="" disabled selected>selecione um tipo</option>
+            <option>
+                Cachorro
+            </option>
+            <option>
+                Alimentação
+            </option>
+            <option>
+                Conta de luz
+            </option>
+            <input type="number" id="valor-minimo" placeholder="valor mínimo">
+            <input type="number" id="valor-maximo" placeholder="valor máximo">
+        </select>
+
+<button onclick="filtrar()">filtrar!</button>
+    </section>
+    <section id="extrato">
+
+    </section>
+    </main>
+</body>
+</html>
