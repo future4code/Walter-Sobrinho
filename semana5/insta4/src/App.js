@@ -3,7 +3,6 @@ import './App.css';
 import Post from './components/Post/Post';
 import styled from 'styled-components'
 
-
 //Estilização
 const ContainerPagina = styled.div `
 display: grid;
@@ -86,7 +85,7 @@ state = {
     fotoPost={this.state.valorInputImagem}
     />
     )
-    
+    this.setState({})
   }
 
   render () {
@@ -95,7 +94,7 @@ return items
 }
 )
     function Print () {
-      console.log(listaDePosts)
+      console.log(listaDePostsAtualizada)
     }
     return (
     <ContainerPagina>
