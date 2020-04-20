@@ -1,7 +1,8 @@
 body {
-  width: 100%;
+  width: 92%;
   padding: 0;
   margin: 0;
+  background-color: #F4F4F4;
 }
 
 
@@ -12,12 +13,18 @@ body {
 }
 
 header {
-  background-color: orange;
-  display: flex;
+  background-color: white;
+  display: grid;
+  grid-template-columns: 20% 40% 40%;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   padding: 0 50px;
   height: 10%;
+  width: 100%;
+}
+
+#campoDeBusca {
+  height: 25px;
 }
 
 main {
@@ -26,9 +33,29 @@ main {
 }
 
 .menu-vertical {
-  flex-basis: 200px;
-  border-right-style: solid;
-  border-right-width: thin;
+  flex-basis: 300px;
+  background-color: white;
+  margin-left: 0;
+  align-items: flex-start;
+}
+
+.nav-icons {
+  heigth: 25px;
+  width: 25px;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  margin-bottom: 15px;
+  padding: 15px;
+}
+
+li:hover {
+  background-color: lightgray;
+  cursor: pointer;
 }
 
 .botoes-meunu-vertical {
@@ -36,12 +63,15 @@ main {
 }
 
 .painel-de-videos {
+  background-color: #F4F4F4;
   padding-left: 20px;
   padding-top: 20px;
   flex-grow: 1;
   display: grid;
   grid-template-columns: repeat(4, 24.8% 0.2%);
   grid-template-rows: repeat(4, 270px 20px);
+  margin-right: 20px;
+  gap: 5px;
 }
 
 .media1 {
@@ -89,8 +119,7 @@ main {
   display: grid;
   grid-template-rows: 3fr 1fr;
   grid-template-columns: 1fr;
-  border-style: solid;
-  border-width: thin; 
+  border:none;
   align-items: start;
   justify-items: stretch;
 }
@@ -106,8 +135,8 @@ footer {
 }
 
 .box-pagina-principal > img {
-  width: 100%;
-  height: 200px;
+  width: 80%;
+  height: 170px;
 }
 
 h4 {
