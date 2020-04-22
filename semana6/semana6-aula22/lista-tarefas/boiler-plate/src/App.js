@@ -37,11 +37,11 @@ class App extends React.Component {
     }
 
   componentDidUpdate() {
-    console.log(this.state.tarefas)
-  };
+        
+  }
 
   componentDidMount() {
-
+    
   };
 
   onChangeInput = (event) => {
@@ -58,7 +58,6 @@ class App extends React.Component {
   this.setState({
     tarefas: novaListaDeTarefas})
     this.setState({inputValue: ""})
-    localStorage.setItem("tarefa", {novaListaDeTarefas} )
   }
 
   selectTarefa = (id) => {
@@ -73,7 +72,7 @@ class App extends React.Component {
       return tarefa
     }
   })
-  this.setState({tarefas: listaDeTarefas})
+  this.setState({tarefas: listaDeTarefas});    
   }
 
   onChangeFilter = (event) => {
@@ -81,8 +80,12 @@ class App extends React.Component {
   }
 
   render() {
-    
-    const listaFiltrada = this.state.tarefas
+    const listaDeTarefas = this.state.tarefas
+    localStorage.setItem("tarefa", JSON.stringify(listaDeTarefas))
+    const tarefasString = localStorage.getItem("tarefa");
+    const tarefasObject = JSON.parse(tarefasString);
+
+    const listaFiltrada = tarefasObject
       .filter(tarefa => {
         switch (this.state.filter) {
           case 'pendentes':
