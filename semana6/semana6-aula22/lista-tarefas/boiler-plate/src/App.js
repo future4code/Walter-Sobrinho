@@ -13,6 +13,7 @@ const TarefaList = styled.ul`
 const Tarefa = styled.li`
   cursor: pointer;
   text-align: left;
+  height: 30px;
   text-decoration: ${({completa}) => (completa ? 'line-through' : 'none')};
 `
 
@@ -25,11 +26,18 @@ const BotaoRemover = styled.button`
 display: block;
 border: none;
 padding: 20px;
+background-color: #8C3635;
+color: white;
+width: 30%;
 `
 
 const Display = styled.div`
 grid-column: ${({completa}) => (completa ? '2/3' : '1/2')};
 border: 1px solid black;
+background-color: lightsalmon;
+color: white;
+font-weight: bold;
+font-size: 1.5em;
 `
 
 const Separadores = styled.div`
@@ -41,17 +49,25 @@ gap: 300px;
 const BotaoEditar = styled.button`
 display: ${({editar}) => (editar ? 'none' : 'block')};
 border: none;
-padding: 20px;
-
+padding: 20px 30px 20px 30px;
+background-color: #8C3635;
+color: white;
+width: 30%;
 `
 
 const InputEditar = styled.input`
 display: ${({editar}) => (editar ? 'inline' : 'none')};
-height: 15px;
+height: 54px;
+border: none;
 `
 
 const BotaoAplicar = styled.button`
 display: ${({editar}) => (editar ? 'inline' : 'none' )};
+background-color: #8C3635;
+color: white;
+width: 30%;
+padding: 20px;
+border: none;
 `
 
 class App extends React.Component {
@@ -123,35 +139,36 @@ class App extends React.Component {
     this.setState({tarefas: listaDeTarefas})
   }
 
-  // funcaoEditar = (id) => {
-  //   const listaDeTarefas = this.state.tarefas.map((tarefa) => {
-  //     if (id === tarefa.id) {
-  //       const novaTarefa = {
-  //         ...tarefa,
-  //         texto: this.inputEditar
-  //       }
-  //       return novaTarefa
-  //     } else {
-  //       return tarefa
-  //     }
-  //   })
-  //   this.setState({tarefas: listaDeTarefas})
-  // }
+  funcaoEditar = (id) => {
+    const listaDeTarefas = this.state.tarefas.map((tarefa) => {
+      if (id === tarefa.id) {
+        const novaTarefa = {
+          ...tarefa,
+          editar: !tarefa.editar
+        }
+        return novaTarefa
+      } else {
+        return tarefa
+      }
+    })
+    this.setState({tarefas: listaDeTarefas})
+  }
 
-  // aplicarMudanca = () => {
-  //   const listaDeTarefas = this.state.tarefas.map((tarefa) => {
-  //     if (id === tarefa.id) {
-  //       const novaTarefa = {
-  //         ...tarefa,
-  //         texto: tarefa.inputEditar
-  //       }
-  //       return novaTarefa
-  //     } else {
-  //       return tarefa
-  //     }
-  //   })
-  //   this.setState({tarefas: listaDeTarefas})
-  // }}
+  aplicarMudanca = (id) => {
+    const listaDeTarefas = this.state.tarefas.map((tarefa) => {
+      if (id === tarefa.id) {
+        const novaTarefa = {
+          ...tarefa,
+          texto: this.state.inputEditar
+        }
+        return novaTarefa
+      } else {
+        return tarefa
+      }
+    })
+    this.setState({tarefas: listaDeTarefas})
+    this.setState({inputEditar: ""})
+  }
 
   onChangeEditar = (event) => {
     this.setState({inputEditar: event.target.value});
