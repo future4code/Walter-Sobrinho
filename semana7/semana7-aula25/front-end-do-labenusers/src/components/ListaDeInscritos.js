@@ -8,6 +8,20 @@ const Lista = styled.div`
   border: rgba(41, 51, 102, 1) 2px solid;
 `;
 
+const BotaoExcluir = styled.button`
+  background: -webkit-linear-gradient(
+    rgba(14, 13, 19, 1) 0%,
+    rgba(202, 83, 177, 1) 26%,
+    rgba(41, 51, 102, 1) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border: none;
+  margin-left: 30px;
+  cursor: pointer;
+  font-size: 1.5em;
+`;
+
 const BotaoRetornar = styled.button`
   background: linear-gradient(
     90deg,
@@ -20,6 +34,12 @@ const BotaoRetornar = styled.button`
   height: 30px;
   font-weight: bold;
   margin-left: 30px;
+`;
+
+const BlocoLista = styled.div`
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
 `;
 
 const CorpoLista = styled.div`
@@ -45,16 +65,66 @@ class ListaDeInscritos extends React.Component {
     lista: [],
   };
 
-  componentDidMount = () => {};
+  componentDidMount = () => {
+    this.listaParaExibir();
+  };
+
+  listaParaExibir = () => {
+    axios
+      .get(
+        "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users",
+        {
+          headers: {
+            Authorization: "walter-sobrinho-julian",
+          },
+        }
+      )
+      .then((resposta) => {
+        this.setState({ lista: resposta.data });
+      })
+      .catch((error) => {
+        alert(error.response);
+      });
+  };
+
+  excluirUser = (usuarioId) => {
+    const id = usuarioId;
+    axios
+      .delete(
+        `https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/${id}`,
+        {
+          headers: {
+            Authorization: "walter-sobrinho-julian",
+          },
+        }
+      )
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((err) => {
+        console.log(err.data);
+      });
+  };
 
   render() {
-    console.log(this.props.lista);
+    console.log(this.state.lista);
     return (
       <CorpoLista>
         <BotaoRetornar onClick={() => this.props.botaoRetornar()}>
           Retornar
         </BotaoRetornar>
-        <ItemLista>{this.props.listaDeUsers}</ItemLista>
+        <Lista>
+          {this.state.lista.map((user) => {
+            return (
+              <BlocoLista>
+                <ItemLista>{user.name}</ItemLista>
+                <BotaoExcluir onClick={this.excluirUser(user.id)}>
+                  X
+                </BotaoExcluir>
+              </BlocoLista>
+            );
+          })}
+        </Lista>
       </CorpoLista>
     );
   }
