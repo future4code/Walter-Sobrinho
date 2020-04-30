@@ -34,6 +34,7 @@ const BotaoRetornar = styled.button`
   height: 30px;
   font-weight: bold;
   margin-left: 30px;
+  width: 20vw;
 `;
 
 const BlocoLista = styled.div`
@@ -47,6 +48,8 @@ const CorpoLista = styled.div`
   flex-direction: column;
   width: 50vw;
   margin: auto;
+  align-items: center;
+  border: gba(41, 51, 102, 1) solid 2px;
 `;
 
 const ItemLista = styled.p`
@@ -65,7 +68,7 @@ class ListaDeInscritos extends React.Component {
     lista: [],
   };
 
-  componentDidMount = () => {
+  componentDidUpdate = () => {
     this.listaParaExibir();
   };
 
@@ -118,7 +121,7 @@ class ListaDeInscritos extends React.Component {
             return (
               <BlocoLista>
                 <ItemLista>{user.name}</ItemLista>
-                <BotaoExcluir onClick={this.excluirUser(user.id)}>
+                <BotaoExcluir onClick={() => this.excluirUser(user.id)}>
                   X
                 </BotaoExcluir>
               </BlocoLista>
