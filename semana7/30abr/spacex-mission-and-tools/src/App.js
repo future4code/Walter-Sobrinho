@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import axios from "axios";
 import WelcomeScreen from "./components/WelcomeScreen";
 import Sobre from "./components/Sobre";
 import Capsulas from "./components/Capsulas";
@@ -9,10 +8,10 @@ import Lancamentos from "./components/Lancamentos";
 
 //Estilização
 const AppCorpo = styled.div`
-  display: grid;
+  /* display: grid;
   grid-template-rows: 1fr 1fr 1fr;
-  justify-content: center;
-  height: 100vh;
+  align-items: center; */
+  /* height: 100vh; */
   background: rgb(192, 75, 242);
   background: linear-gradient(
     90deg,
@@ -28,6 +27,7 @@ const Nav = styled.div`
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+  margin-bottom: 100px;
 `;
 
 const Botao = styled.button`
