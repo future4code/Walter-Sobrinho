@@ -4,7 +4,7 @@ import Typography from "@material-ui/core/Typography";
 
 export const CardContainer = styled(Paper)`
   height: 20vh;
-  width: 40vw;
+  width: 90%;
   display: flex;
   justify-content: space-around;
   align-items: center;
