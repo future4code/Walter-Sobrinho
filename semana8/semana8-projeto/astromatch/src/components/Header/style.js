@@ -12,6 +12,7 @@ export const HeaderContainer = styled.div`
   color: white;
   display: flex;
   justify-content: space-between;
+  z-index: 1;
 `;
 
 export const MatchIcon = styled(MatchesIcon)`

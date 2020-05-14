@@ -20,15 +20,25 @@ export const ScreenContainer = styled(Card)`
   align-items: center;
 `;
 
+export const FotoPerfil = styled.img`
+  margin: 0 auto;
+  height: 90vh;
+  width: 39.5vw;
+  z-index: -1;
+  position: fixed;
+  @media screen and (max-width: 500px) {
+    width: 100vw;
+  }
+`;
 export const MatchBox = styled.div`
-  background-image: url("https://picsum.photos/600/800");
+  /* background-image: url("https://picsum.photos/600/800"); */
   height: 100%;
   width: 40%;
   margin: auto;
   display: flex;
   flex-direction: column-reverse;
   justify-content: space-between;
-  z-index: 1;
+  z-index: 2;
   border: 3px solid #b71c1c;
   border-radius: 20px;
   @media screen and (max-width: 500px) {
@@ -59,8 +69,8 @@ export const RejectButton = styled(RejectIcon)`
   cursor: pointer;
   color: #b71c1c;
   opacity: 1;
+  z-index: 1;
   transform: scale(6);
-  z-index: 2;
   @media screen and (max-width: 500px) {
     transform: scale(3);
   }
@@ -70,8 +80,8 @@ export const MatchButton = styled(MatchIcon)`
   cursor: pointer;
   color: #b71c1c;
   opacity: 1;
+  z-index: 1;
   transform: scale(6);
-  z-index: 2;
   height: 100%;
   @media screen and (max-width: 500px) {
     transform: scale(3);
@@ -79,12 +89,13 @@ export const MatchButton = styled(MatchIcon)`
 `;
 
 export const DetalhesContainer = styled.div`
-  z-index: 3;
   width: 100%;
+  z-index: 2;
 `;
 
 export const DescriçãoTxt = styled(Typography)`
   opacity: 1;
+  z-index: 2;
 `;
 
 export const Header = styled.div`
@@ -95,22 +106,18 @@ export const Header = styled.div`
   width: 100%;
   color: white;
   display: flex;
-  justify-content: space-between;z
+  justify-content: space-between;
 `;
 
 export const Matches = styled(MatchesIcon)`
   cursor: pointer;
   margin: auto;
+  z-index: 2;
 `;
 
 export const Message = styled(MessageIcon)`
   cursor: pointer;
   margin: auto;
-`;
-
-export const Logo = styled.img`
-  width: 80px;
-  height: 100%;
 `;
 
 export const LogoContainer = styled.div`
