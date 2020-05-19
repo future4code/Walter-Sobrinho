@@ -1,11 +1,8 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 
-function App() {
-  return (
-    <div>
-      <AppContainer />
-    </div>
-  );
+function SubsPage() {
+  return <div></div>;
 }
 
-export default App;
+export default SubsPage;

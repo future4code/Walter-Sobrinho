@@ -1,11 +1,20 @@
 import React from "react";
+import { useParams, useHistory } from "react-router";
 
-function App() {
+function Adm() {
+  const pathParams = useParams();
+  const history = useHistory();
+
   return (
     <div>
-      <AppContainer />
+      <img
+        src="https://images8.alphacoders.com/371/371636.jpg"
+        alt="foto"
+        height="1200"
+        width="1920"
+      />
     </div>
   );
 }
 
-export default App;
+export default Adm;
