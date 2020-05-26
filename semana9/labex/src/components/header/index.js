@@ -1,11 +1,17 @@
 import React from "react";
+import { HeaderContainer, LabexIcon, BotaoLogin } from "./style";
+import Logo from "../../img/logo.png";
+import { Link } from "react-router-dom";
 
-function App() {
+function Header() {
   return (
-    <div>
-      <AppContainer />
-    </div>
+    <HeaderContainer>
+      <Link to="home">
+        <LabexIcon src={Logo} />
+      </Link>
+      <BotaoLogin variant="contained">Login</BotaoLogin>
+    </HeaderContainer>
   );
 }
 
-export default App;
+export default Header;
