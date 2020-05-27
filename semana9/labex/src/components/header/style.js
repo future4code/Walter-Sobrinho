@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Button from "@material-ui/core/Button";
+import Button from "react-bootstrap/Button";
 
 export const HeaderContainer = styled.div`
   height: 100px;
@@ -17,4 +17,12 @@ export const LabexIcon = styled.img`
 export const BotaoLogin = styled(Button)`
   width: 200px;
   height: 60px;
+  background-color: #62a4ab;
+  border-radius: 20px;
+  outline: none;
+  border: none;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 1.5em;
 `;

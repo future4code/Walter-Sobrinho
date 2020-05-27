@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Button from "@material-ui/core/Button";
+import Button from "react-bootstrap/Button";
 
 export const AdmContainer = styled.div``;
 
@@ -37,4 +37,12 @@ export const ActivityDisplay = styled.div`
 
 export const Botao = styled(Button)`
   height: 60%;
+  background-color: #62a4ab;
+  border-radius: 20px;
+  width: 10%;
+  border: none;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 1.2em;
 `;

@@ -3,11 +3,7 @@ import Login from "./login";
 import { useHistory } from "react-router-dom";
 
 export function App() {
-  return (
-    <div>
-      <Login />
-    </div>
-  );
+  return <Login />;
 }
 
 export default App;

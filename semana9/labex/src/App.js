@@ -10,6 +10,7 @@ import axios from "axios";
 
 function App() {
   const [trips, handleTrips] = useState([]);
+
   useEffect(() => {
     axios
       .get(
