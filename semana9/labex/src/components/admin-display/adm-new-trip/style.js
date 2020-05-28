@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import TextField from "@material-ui/core/TextField";
+import Button from "react-bootstrap/Button";
 
 export const AdminNewTripContainer = styled.div`
   display: flex;
@@ -15,3 +16,18 @@ export const AdminNewTripContainer = styled.div`
 `;
 
 export const Input = styled(TextField)``;
+
+export const Form = styled.form`
+  display: flex;
+  flex-flow: column wrap;
+`;
+
+export const Botao = styled(Button)`
+  width: 40%;
+  background-color: #e89ac7;
+  border: none;
+  border-radius: 20px;
+  height: 50px;
+  font-size: 1.2em;
+  margin: 10px auto;
+`;

@@ -9,21 +9,6 @@ import Login from "./pages/login";
 import axios from "axios";
 
 function App() {
-  const [trips, handleTrips] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get(
-        "https://us-central1-labenu-apis.cloudfunctions.net/labeX/darvas/trips"
-      )
-      .then((response) => {
-        handleTrips(response.data);
-      })
-      .catch((err) => {
-        console.log(err.data);
-      });
-  }, []);
-
   return (
     <BrowserRouter>
       <Switch>
@@ -37,7 +22,7 @@ function App() {
           <SubsPage />
         </Route>
         <Route exact path="/tripsdisplay">
-          <TripsDisplay trips={trips} />
+          <TripsDisplay />
         </Route>
         <Route exact path="/login">
           <Login />

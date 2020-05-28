@@ -3,6 +3,7 @@ import Header from "../../components/header";
 import { useHistory } from "react-router-dom";
 import { TripContainer, TripsWrapper, FilterContainer, Input } from "./style";
 import Trip from "../../components/trip";
+import { useGetTrips } from "../../functions";
 
 function TripsDisplay(props) {
   const history = useHistory();
@@ -16,23 +17,10 @@ function TripsDisplay(props) {
     }
   }, [history]);
 
-  // useEffect(() => {
-  //   console.log(props.trips);
-  //   changeTrips(
-  //     props.trips.map((trip) => {
-  //       return (
-  //         <Trip
-  //           tripId={trip.id}
-  //           tripDuration={trip.duration}
-  //           tripName={trip.name}
-  //           tripPlanet={trip.planet}
-  //           tripDescription={trip.description}
-  //           tripDate={trip.date}
-  //         />
-  //       );
-  //     })
-  //   );
-  // }, []);
+  useEffect(() => {
+    const trips = useGetTrips;
+  }, [history]);
+
   return (
     <TripContainer>
       <Header />

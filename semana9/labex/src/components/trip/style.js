@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Typhography from "@material-ui/core/Typography";
+import Carousel from "react-bootstrap/Carousel";
 
 export const DisplayContainer = styled.div`
   border-radius: 20px;
@@ -17,6 +18,8 @@ export const FotoDisplay = styled.img`
   width: 100%;
   border-radius: 20px;
 `;
+
+export const Slide = styled(Carousel)``;
 
 export const Texto = styled(Typhography)``;
 

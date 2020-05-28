@@ -15,7 +15,7 @@ import { useForm } from "../../functions";
 
 function SubsPage() {
   const { form, onChange, resetForm } = useForm({
-    nome: "",
+    name: "",
     age: "",
     motivation: "",
     job: "",
@@ -331,7 +331,9 @@ function SubsPage() {
             <Opcao value="Zambia">Zambia</Opcao>
             <Opcao value="Zimbabwe">Zimbabwe</Opcao>
           </Seletor>
-          <Botao variant="contained">Enviar</Botao>
+          <Botao variant="contained" onClick={functionSubmit}>
+            Enviar
+          </Botao>
         </Form>
       </FormWrapper>
     </SubsPageContainer>
