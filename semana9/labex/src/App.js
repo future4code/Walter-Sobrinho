@@ -6,7 +6,7 @@ import SubsPage from "./pages/subscribePage";
 import TripsDisplay from "./pages/tripdisplay";
 import Error from "./pages/error";
 import Login from "./pages/login";
-import axios from "axios";
+import SignUp from "./pages/signup";
 
 function App() {
   return (
@@ -26,6 +26,9 @@ function App() {
         </Route>
         <Route exact path="/login">
           <Login />
+        </Route>
+        <Route exact path="/signup">
+          <SignUp />
         </Route>
         <Route path="/">
           <Error />

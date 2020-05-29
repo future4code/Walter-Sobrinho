@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { useParams, useHistory } from "react-router";
+import React, { useState, useEffect } from "react";
+import { useParams, useHistory } from "react-router-dom";
 import {
   AdmContainer,
   AdmBgImage,
@@ -9,10 +9,16 @@ import {
 } from "./style";
 import Header from "../../components/header";
 import DisplayContainer from "../../components/admin-display";
+import { getPermission, gateKeeper } from "../../functions";
+
 function Adm(props) {
   const pathParams = useParams();
   const history = useHistory();
   const [page, switchPage] = useState("none");
+
+  useEffect(() => {
+    gateKeeper();
+  }, [history]);
 
   const showTrips = () => {
     switchPage("lista");

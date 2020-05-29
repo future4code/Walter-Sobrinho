@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import TextField from "@material-ui/core/TextField";
 import Button from "react-bootstrap/Button";
 
 export const SubsPageContainer = styled.div`
@@ -27,8 +26,19 @@ export const FormWrapper = styled.div`
   padding-left: 100px;
 `;
 
-export const Input = styled(TextField)`
+export const Input = styled.input`
   width: 60%;
+  height: 40px;
+  background: none;
+  border: 1px solid lightgrey;
+  border-radius: 15px;
+  outline: none;
+  &:hover {
+    border: 1px solid grey;
+  }
+  &:focus {
+    border: 1px solid grey;
+  }
 `;
 
 export const Form = styled.form`

@@ -39,3 +39,19 @@ export const useGetTrips = () => {
     });
   return trips;
 };
+
+export const getPermission = async (url) => {
+  const token = window.localStorage.getItem("token");
+
+  const response = await axios.get(`${url}`, { headers: { Auth: token } });
+
+  return response;
+};
+
+export const gateKeeper = (history) => {
+  const token = window.localStorage.getItem("token");
+
+  if (token === null) {
+    history.push("/login");
+  }
+};

@@ -2,11 +2,11 @@ import styled from "styled-components";
 import Card from "react-bootstrap/Card";
 
 export const ErrorBg = styled.img`
-  height: 99vh;
-  width: 100vw;
+  height: 98vh;
+  width: 99vw;
 `;
 
-export const X = styled(Card)`
+export const ErrorDisplay = styled(Card)`
   position: absolute;
   top: 30%;
   left: 32%;
@@ -17,7 +17,7 @@ export const X = styled(Card)`
   font-weight: bold;
   -webkit-box-shadow: 3px 3px 5px 6px #ccc;
   -moz-box-shadow: 3px 3px 5px 6px #ccc;
-  box-shadow: 10px 3px 5px 6px #0f0f0f;
+  box-shadow: 10px 4px 5px 6px #2f2f2f;
   border-radius: 20px;
 `;
 

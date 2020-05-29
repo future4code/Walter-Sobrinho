@@ -31,3 +31,7 @@ export const Botao = styled(Button)`
   font-size: 1.2em;
   margin: 10px auto;
 `;
+
+export const Seletor = styled.select``;
+
+export const Opcao = styled.option``;

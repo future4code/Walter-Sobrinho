@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import Header from "../../components/header";
 import {
@@ -11,7 +11,7 @@ import {
   Opcao,
   Botao,
 } from "./style";
-import { useForm } from "../../functions";
+import { useForm, gateKeeper } from "../../functions";
 
 function SubsPage() {
   const { form, onChange, resetForm } = useForm({
@@ -21,6 +21,12 @@ function SubsPage() {
     job: "",
     country: "",
   });
+
+  const history = useHistory();
+
+  useEffect(() => {
+    gateKeeper();
+  }, [history]);
 
   const dealInputChange = (event) => {
     const { value, name } = event.target;
@@ -40,42 +46,46 @@ function SubsPage() {
       <FormWrapper>
         <Form onSubmit={functionSubmit}>
           <Input
-            variant="outlined"
-            name="nome"
+            name="name"
             type="text"
-            required
             value={Form.name}
             onChange={dealInputChange}
             placeholder="Digite seu nome"
+            pattern={["[A-Za-z ]{3,}"]}
+            title="Digite um nome válido"
+            required
           />
           <Input
-            variant="outlined"
             name="age"
             type="number"
             required
+            min="18"
+            max="70"
+            pattern="^(0|[1-9][0-9]*)$"
+            title="Por questões legais não aceitamos menores de 18 anos e mais velhos que 70 anos"
             value={Form.name}
             onChange={dealInputChange}
             placeholder="Digite sua idade"
           />
           <Input
-            variant="outlined"
-            name="motivo"
+            name="motivation"
             type="text"
+            pattern={["[A-Za-z ]{3,}"]}
             required
             value={Form.name}
             onChange={dealInputChange}
             placeholder="Digite sua motivação"
           />
           <Input
-            variant="outlined"
             name="job"
             type="text"
+            pattern={["[A-Za-z ]{3,}"]}
             required
             value={Form.name}
             onChange={dealInputChange}
             placeholder="Digite seu emprego"
           />
-          <Seletor name="country">
+          <Seletor name="country" onChange={dealInputChange}>
             <Opcao value="Afganistan">Afghanistan</Opcao>
             <Opcao value="Albania">Albania</Opcao>
             <Opcao value="Algeria">Algeria</Opcao>
@@ -331,9 +341,7 @@ function SubsPage() {
             <Opcao value="Zambia">Zambia</Opcao>
             <Opcao value="Zimbabwe">Zimbabwe</Opcao>
           </Seletor>
-          <Botao variant="contained" onClick={functionSubmit}>
-            Enviar
-          </Botao>
+          <Botao type="submit">Enviar</Botao>
         </Form>
       </FormWrapper>
     </SubsPageContainer>

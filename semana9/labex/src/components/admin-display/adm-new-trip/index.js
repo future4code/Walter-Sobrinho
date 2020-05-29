@@ -1,5 +1,12 @@
 import React, { useEffect } from "react";
-import { AdminNewTripContainer, Input, Form, Botao } from "./style";
+import {
+  AdminNewTripContainer,
+  Input,
+  Form,
+  Botao,
+  Opcao,
+  Seletor,
+} from "./style";
 import { useForm } from "../../../functions";
 import axios from "axios";
 
@@ -60,16 +67,19 @@ function AdminNewTrip() {
           type="text"
           value={form.name}
           onChange={functionInputChange}
+          pattern={["[A-Za-z ]{3,}"]}
           required
         />
-        <Input
-          name="planet"
-          variant="filled"
-          label="Planeta"
-          value={form.planet}
-          onChange={functionInputChange}
-          required
-        />
+        <Seletor name="planet" onChange={functionInputChange}>
+          <Opcao value="Mercúrio">Mercúrio</Opcao>
+          <Opcao value="Vênus">Vênus</Opcao>
+          <Opcao value="Marte">Marte</Opcao>
+          <Opcao value="Júpiter">Júpiter</Opcao>
+          <Opcao value="Saturno">Saturno</Opcao>
+          <Opcao value="Urano">Urano</Opcao>
+          <Opcao value="Neturno">Neturno</Opcao>
+          <Opcao value="Lua">Lua</Opcao>
+        </Seletor>
         <Input
           name="description"
           variant="filled"
@@ -77,6 +87,7 @@ function AdminNewTrip() {
           type="text"
           value={form.description}
           onChange={functionInputChange}
+          pattern={["[A-Za-z ]{3,}"]}
           required
         />
         <Input
