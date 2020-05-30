@@ -32,6 +32,10 @@ export const Botao = styled(Button)`
   margin: 10px auto;
 `;
 
-export const Seletor = styled.select``;
+export const Seletor = styled.select`
+  background: none;
+  border: 1px solid grey;
+  height: 20px;
+`;
 
 export const Opcao = styled.option``;

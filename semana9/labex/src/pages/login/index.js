@@ -13,8 +13,14 @@ import { useForm } from "../../functions";
 
 export function Login() {
   const history = useHistory();
-  const [email, changeEmail] = useState("");
-  const [password, changePassword] = useState("");
+
+  useEffect(() => {
+    const token = window.localStorage.getItem("token");
+
+    if (token !== null) {
+      history.push("/tripsdisplay");
+    }
+  }, []);
 
   const handleLogin = async () => {
     const body = { email: form.email, password: form.password };

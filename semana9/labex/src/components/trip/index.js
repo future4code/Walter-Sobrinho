@@ -1,22 +1,69 @@
-import React from "react";
-import { DisplayContainer, FotoDisplay, Texto, InfoBox, Slide } from "./style";
+import React, { useState } from "react";
+import {
+  DisplayContainer,
+  FotoDisplay,
+  Texto,
+  InfoBox,
+  TripListContainer,
+  LittleCard,
+  LittleCardPic,
+  PageContainer,
+} from "./style";
+import { useGetTrips } from "../../functions";
+import trip1 from "../../img/trip1.jpg";
+import trip2 from "../../img/trip2.jpg";
+import trip3 from "../../img/trip3.jpg";
+import trip4 from "../../img/trip4.jpg";
+import trip5 from "../../img/trip5.jpg";
+import trip6 from "../../img/trip6.jpg";
+import trip7 from "../../img/trip7.jpg";
+import TripDetails from "./TripDetails.js";
 
 export function Trip(props) {
+  const [trip, selectTrip] = useState({});
+
+  const [pic, selectPic] = useState(
+    "https://img.ibxk.com.br/2020/01/30/30145052314407.jpg"
+  );
+
+  const tripList = useGetTrips();
+
+  const imgArray = [trip1, trip2, trip3, trip4, trip5, trip6, trip7];
+
+  const tripToShow = (tripId, idx) => {
+    tripList.filter((trip) => {
+      const id = tripId;
+      if (id === trip.id) {
+        selectTrip(trip);
+        selectPic(imgArray[idx]);
+      }
+    });
+  };
+
   return (
-    <Slide>
-      <Slide.Item>
-        <DisplayContainer elevation={10}>
-          <FotoDisplay src="https://conteudo.imguol.com.br/c/noticias/e1/2018/12/05/terceira-temporada-da-animacao-para-adultos-rick-and-morty-e-disponibilizada-pela-netflix-1544032759199_v2_1920x1080.jpg" />
-          <InfoBox>
-            <Texto variant="h5">Multi luau em Jupiter</Texto>
-            <Texto>Jupiter</Texto>
-            <Texto>Noite mágica com vista para as 69 luas de Jupiter</Texto>
-            <Texto>Duração: 540 dias</Texto>
-            <Texto>Data: 21/12/2020</Texto>
-          </InfoBox>
-        </DisplayContainer>
-      </Slide.Item>
-    </Slide>
+    <div>
+      <TripListContainer>
+        {tripList.map((trip, idx) => {
+          return (
+            <PageContainer>
+              <LittleCard
+                key={trip.id}
+                onClick={(e) => {
+                  tripToShow(trip.id, idx);
+                }}
+              >
+                <LittleCardPic src={imgArray[idx]} />
+                <Texto variant="h6">{trip.name}</Texto>
+                <Texto>Planeta: {trip.planet}</Texto>
+                <Texto>Data: {trip.date}</Texto>
+                <Texto>Duração: {trip.durationInDays} dias</Texto>
+              </LittleCard>
+            </PageContainer>
+          );
+        })}
+        <TripDetails trips={trip} pic={pic} />
+      </TripListContainer>
+    </div>
   );
 }
 

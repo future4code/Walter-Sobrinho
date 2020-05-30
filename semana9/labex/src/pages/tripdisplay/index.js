@@ -3,11 +3,9 @@ import Header from "../../components/header";
 import { useHistory } from "react-router-dom";
 import { TripContainer, TripsWrapper, FilterContainer, Input } from "./style";
 import Trip from "../../components/trip";
-import { useGetTrips } from "../../functions";
 
 function TripsDisplay(props) {
   const history = useHistory();
-  const [allTrips, changeTrips] = useState([]);
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -15,10 +13,6 @@ function TripsDisplay(props) {
     if (token === null) {
       history.push("/");
     }
-  }, [history]);
-
-  useEffect(() => {
-    const trips = useGetTrips;
   }, [history]);
 
   return (

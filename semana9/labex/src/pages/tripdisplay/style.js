@@ -10,7 +10,7 @@ export const TripContainer = styled.div`
 
 export const TripsWrapper = styled.div`
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   margin-top: 50px;
 `;
 

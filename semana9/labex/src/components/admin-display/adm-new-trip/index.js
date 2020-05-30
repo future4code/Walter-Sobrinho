@@ -42,14 +42,21 @@ function AdminNewTrip() {
 
   const functionSubmit = (event) => {
     event.preventDefault();
+    const token = window.localStorage.getItem("token");
     const body = form;
     axios
       .post(
         "https://us-central1-labenu-apis.cloudfunctions.net/labeX/walter-julian/trips",
-        body
+        body,
+        {
+          headers: {
+            auth: token,
+          },
+        }
       )
       .then((resp) => {
-        console.log(resp);
+        resetForm();
+        window.alert("Viagem criada com sucesso!");
       })
       .catch((err) => {
         console.log(err);
@@ -70,16 +77,6 @@ function AdminNewTrip() {
           pattern={["[A-Za-z ]{3,}"]}
           required
         />
-        <Seletor name="planet" onChange={functionInputChange}>
-          <Opcao value="Mercúrio">Mercúrio</Opcao>
-          <Opcao value="Vênus">Vênus</Opcao>
-          <Opcao value="Marte">Marte</Opcao>
-          <Opcao value="Júpiter">Júpiter</Opcao>
-          <Opcao value="Saturno">Saturno</Opcao>
-          <Opcao value="Urano">Urano</Opcao>
-          <Opcao value="Neturno">Neturno</Opcao>
-          <Opcao value="Lua">Lua</Opcao>
-        </Seletor>
         <Input
           name="description"
           variant="filled"
@@ -111,6 +108,16 @@ function AdminNewTrip() {
           onChange={functionInputChange}
           required
         />
+        <Seletor name="planet" onChange={functionInputChange}>
+          <Opcao value="Mercúrio">Mercúrio</Opcao>
+          <Opcao value="Vênus">Vênus</Opcao>
+          <Opcao value="Marte">Marte</Opcao>
+          <Opcao value="Júpiter">Júpiter</Opcao>
+          <Opcao value="Saturno">Saturno</Opcao>
+          <Opcao value="Urano">Urano</Opcao>
+          <Opcao value="Neturno">Neturno</Opcao>
+          <Opcao value="Lua">Lua</Opcao>
+        </Seletor>
         <Botao type="submit">Enviar</Botao>
       </Form>
     </AdminNewTripContainer>

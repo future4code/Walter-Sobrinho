@@ -29,10 +29,10 @@ export const useGetTrips = () => {
   const [trips, handleTrips] = useState([]);
   axios
     .get(
-      "https://us-central1-labenu-apis.cloudfunctions.net/labeX/darvas/trips"
+      "https://us-central1-labenu-apis.cloudfunctions.net/labeX/walter-julian/trips"
     )
     .then((response) => {
-      handleTrips(response.data);
+      handleTrips(response.data.trips);
     })
     .catch((err) => {
       console.log(err.data);
