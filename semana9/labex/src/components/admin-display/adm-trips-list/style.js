@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const AdminTripsListContainer = styled.div`
-  margin: 20px auto;
+  margin: 20px 10px 10px 20px;
 `;
 
 export const ItemList = styled.li`
@@ -9,6 +9,7 @@ export const ItemList = styled.li`
   font-size: 1.5em;
   background-color: #66d17e;
   margin: 2px;
+  width: 200px;
   cursor: pointer;
   &:hover {
     opacity: 0.6;

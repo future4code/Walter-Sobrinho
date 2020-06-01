@@ -50,7 +50,7 @@ function SignUp() {
             value={Form.name}
             onChange={dealInputChange}
             placeholder="Digite seu e-mail"
-            pattern="^w+@[a-zA-Z_]+?.[a-zA-Z]{2,3}$"
+            pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
             title="Digite um e-mail válido"
           />
           <Input

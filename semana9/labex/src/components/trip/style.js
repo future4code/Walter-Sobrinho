@@ -1,8 +1,10 @@
 import styled from "styled-components";
 import Typhography from "@material-ui/core/Typography";
-import Carousel from "react-bootstrap/Carousel";
+import Button from "react-bootstrap/Button";
 
 export const DisplayContainer = styled.div`
+  display: flex;
+
   border-radius: 20px;
   height: 45vh;
   width: 50vw;
@@ -70,4 +72,24 @@ export const PageContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(3, 1fr);
+`;
+
+export const Botao = styled(Button)`
+  height: 100px;
+  background: none;
+  background-color: #e89ac7;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border: none;
+  border-radius: 50px;
+  margin: auto 40px;
+  transition: 450ms;
+  &:hover {
+    height: 200px;
+    padding: 30px;
+    border-radius: 68%;
+    font-size: 1.5em;
+    text-shadow: 3px 3px #2f2f2f;
+  }
 `;

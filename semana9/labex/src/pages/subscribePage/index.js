@@ -12,6 +12,8 @@ import {
   Botao,
 } from "./style";
 import { useForm, gateKeeper } from "../../functions";
+import { useStore } from "use-store";
+import axios from "axios";
 
 function SubsPage() {
   const { form, onChange, resetForm } = useForm({
@@ -25,7 +27,7 @@ function SubsPage() {
   const history = useHistory();
 
   useEffect(() => {
-    gateKeeper();
+    gateKeeper(history);
   }, [history]);
 
   const dealInputChange = (event) => {
@@ -33,10 +35,22 @@ function SubsPage() {
     onChange(name, value);
   };
 
-  const functionSubmit = (event) => {
+  const functionSubmit = async (event) => {
+    const body = {
+      name: form.name,
+      age: form.age,
+      applicationText: form.motivation,
+      profession: form.job,
+      country: form.country,
+    };
+    const baseUrl =
+      "https://us-central1-labenu-apis.cloudfunctions.net/labeX/walter-julian";
     event.preventDefault();
-
-    console.log(form);
+    const tripId = window.localStorage.getItem("tripId");
+    await axios
+      .post(`${baseUrl}/trips/${tripId}/apply`, body)
+      .then((res) => window.alert("Seus dados foram cadastrados!"));
+    history.push("/tripsdisplay");
   };
 
   return (

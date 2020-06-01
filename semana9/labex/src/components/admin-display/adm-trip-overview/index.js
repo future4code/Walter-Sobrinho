@@ -1,16 +1,57 @@
-import React from "react";
-import { TripOverviewContainer, TripOverViewImg, Texto, Botao } from "./style";
+import React, { useState, useEffect } from "react";
+import {
+  TripOverviewContainer,
+  TripOverViewImg,
+  Texto,
+  Botao,
+  Container,
+  DisplayWrapper,
+} from "./style";
+import AdminTripsList from "../adm-trips-list";
+import { useGetTrips } from "../../../functions";
+import trip1 from "../../../img/trip1.jpg";
+import trip2 from "../../../img/trip2.jpg";
+import trip3 from "../../../img/trip3.jpg";
+import trip4 from "../../../img/trip4.jpg";
+import trip5 from "../../../img/trip5.jpg";
+import trip6 from "../../../img/trip6.jpg";
+import trip7 from "../../../img/trip7.jpg";
+import axios from "axios";
 
 function TripOverview() {
+  const allTrips = useGetTrips({});
+
+  const baseUrl =
+    "https://us-central1-labenu-apis.cloudfunctions.net/labeX/walter-julian/trip";
+
+  const token = window.localStorage.getItem("token");
+
+  const [trip, changeTrip] = useState({});
+
+  const selectTrip = (id) => {
+    allTrips.filter((trip) => {
+      if (trip.id === id) return trip;
+      changeTrip(trip);
+    });
+  };
+
+  useEffect(() => {
+    console.log(trip);
+  }, [trip]);
+
   return (
-    <TripOverviewContainer>
-      <TripOverViewImg src="https://static2.cbrimages.com/wordpress/wp-content/uploads/2020/01/rick-morty-hell.jpg" />
-      <Texto>Ano novo em Mercúrio</Texto>
-      <Texto>Planeta: Mercúrio</Texto>
-      <Texto>Venha passar a virada pertinho do Sol!</Texto>
-      <Texto>Data: 31/12/2020</Texto>
-      <Texto>Duração: 7 dias.</Texto>
-    </TripOverviewContainer>
+    <Container>
+      <AdminTripsList trip={allTrips} selectTrip={() => selectTrip(trip.id)} />
+      <DisplayWrapper>
+        <TripOverviewContainer>
+          <Texto>{trip.name}</Texto>
+          <Texto>Planeta: {trip.planet}</Texto>
+          <Texto>{trip.description}</Texto>
+          <Texto>Data: {trip.date}</Texto>
+          <Texto>Duração: {trip.durationInDays} dias</Texto>
+        </TripOverviewContainer>
+      </DisplayWrapper>
+    </Container>
   );
 }
 

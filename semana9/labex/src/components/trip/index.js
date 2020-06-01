@@ -18,26 +18,39 @@ import trip5 from "../../img/trip5.jpg";
 import trip6 from "../../img/trip6.jpg";
 import trip7 from "../../img/trip7.jpg";
 import TripDetails from "./TripDetails.js";
+import axios from "axios";
 
 export function Trip(props) {
   const [trip, selectTrip] = useState({});
 
+  const baseUrl =
+    "https://us-central1-labenu-apis.cloudfunctions.net/labeX/walter-julian/trip";
+
   const [pic, selectPic] = useState(
     "https://img.ibxk.com.br/2020/01/30/30145052314407.jpg"
   );
+
+  const token = window.localStorage.getItem("token");
 
   const tripList = useGetTrips();
 
   const imgArray = [trip1, trip2, trip3, trip4, trip5, trip6, trip7];
 
   const tripToShow = (tripId, idx) => {
-    tripList.filter((trip) => {
-      const id = tripId;
-      if (id === trip.id) {
-        selectTrip(trip);
-        selectPic(imgArray[idx]);
-      }
-    });
+    tripList
+      .filter((trip) => {
+        const id = tripId;
+        if (id === trip.id) {
+          selectTrip(trip);
+          selectPic(imgArray[idx]);
+        }
+      })
+      .then(
+        axios
+          .get(`${baseUrl}/${trip.id}`, { Headers: { auth: token } })
+          .then((response) => console.log(response.data))
+          .catch((error) => console.log(error.data))
+      );
   };
 
   return (

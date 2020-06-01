@@ -24,10 +24,12 @@ export function Login() {
 
   const handleLogin = async () => {
     const body = { email: form.email, password: form.password };
-    const response = await axios.post(
-      "https://us-central1-labenu-apis.cloudfunctions.net/labeX/walter-julian/login",
-      body
-    );
+    const response = await axios
+      .post(
+        "https://us-central1-labenu-apis.cloudfunctions.net/labeX/walter-julian/login",
+        body
+      )
+      .then((response) => window.alert("Login efetuado com sucesso!"));
 
     window.localStorage.setItem("token", response.data.token);
     history.push("/tripsdisplay");

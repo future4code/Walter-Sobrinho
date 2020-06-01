@@ -17,7 +17,7 @@ function Adm(props) {
   const [page, switchPage] = useState("none");
 
   useEffect(() => {
-    gateKeeper();
+    gateKeeper(history);
   }, [history]);
 
   const showTrips = () => {
