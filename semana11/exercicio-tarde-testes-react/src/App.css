@@ -18,3 +18,11 @@
 p {
   margin: 0;
 }
+
+#error-msg {
+  background-color: red;
+  color: white;
+  text-shadow: 2px 2px #2f2f2f;
+  font-size: 1.2em;
+  padding: 10px;
+}
