@@ -1,0 +1,182 @@
+body {
+  margin: 0;
+  padding: 0;
+  color: #f2d0a7;
+}
+
+body::-webkit-scrollbar {
+  width: 20px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #222601;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #657334;
+  border-radius: 10px;
+}
+
+.App {
+  text-align: center;
+  background-color: #f2d0a7;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  font-family: "Quicksand", sans-serif;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+header {
+  font-family: "Covered By Your Grace", cursive;
+  background-color: #657334;
+  border-radius: 20px;
+  -webkit-box-shadow: 4px 6px 4px #222601;
+          box-shadow: 4px 6px 4px #222601;
+}
+
+header h1 {
+  font-size: 2.5em;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+.form-container {
+  background-color: #657334;
+  border-radius: 20px;
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-shadow: 4px 6px 4px #222601;
+          box-shadow: 4px 6px 4px #222601;
+  margin: 20px auto;
+}
+
+form {
+  width: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+form button {
+  display: inline-block;
+  border: none;
+  padding: 1rem 2rem;
+  margin: 0;
+  text-decoration: none;
+  background: transparent;
+  color: #f2d0a7;
+  font-family: sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+  -webkit-transition: background 500ms ease-in-out, -webkit-transform 500ms ease;
+  transition: background 500ms ease-in-out, -webkit-transform 500ms ease;
+  transition: background 500ms ease-in-out, transform 500ms ease;
+  transition: background 500ms ease-in-out, transform 500ms ease, -webkit-transform 500ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -webkit-box-shadow: 4px 6px 4px #222601;
+          box-shadow: 4px 6px 4px #222601;
+  background-color: #44592e;
+  border-radius: 20px;
+  height: 3em;
+  width: 10em;
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+form button:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+form select {
+  background-color: #44592e;
+  border-radius: 20px;
+  height: 2em;
+  font-size: 1.4em;
+}
+
+form select:hover {
+  background-color: #517356;
+}
+
+.day {
+  width: 14%;
+  background-color: #657334;
+  border-radius: 20px;
+  -webkit-box-shadow: 4px 6px 4px #222601;
+          box-shadow: 4px 6px 4px #222601;
+  color: #f2d0a7;
+  text-shadow: 2px 2px #222601;
+}
+
+textarea {
+  height: 100px;
+  min-width: 400px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.task-container {
+  background-color: #517356;
+  border-radius: 20px;
+  margin: 5px auto;
+}
+
+.task-container button {
+  display: inline-block;
+  border: none;
+  padding: 1rem 2rem;
+  margin: 0;
+  text-decoration: none;
+  background: transparent;
+  color: #f2d0a7;
+  font-family: sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+  -webkit-transition: background 500ms ease-in-out, -webkit-transform 500ms ease;
+  transition: background 500ms ease-in-out, -webkit-transform 500ms ease;
+  transition: background 500ms ease-in-out, transform 500ms ease;
+  transition: background 500ms ease-in-out, transform 500ms ease, -webkit-transform 500ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border-radius: 90%;
+  padding: 5px;
+  -webkit-transition: background ease-in-out 500ms, -webkit-transform ease-in 500ms;
+  transition: background ease-in-out 500ms, -webkit-transform ease-in 500ms;
+  transition: background ease-in-out 500ms, transform ease-in 500ms;
+  transition: background ease-in-out 500ms, transform ease-in 500ms, -webkit-transform ease-in 500ms;
+}
+
+.task-container button:hover {
+  background: #590202;
+  background: -webkit-gradient(linear, left top, right top, from(#590202), color-stop(20%, #8c0303), color-stop(77%, #f25c05));
+  background: linear-gradient(90deg, #590202 0%, #8c0303 20%, #f25c05 77%);
+  border-radius: 90%;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+/*# sourceMappingURL=App.css.map */
