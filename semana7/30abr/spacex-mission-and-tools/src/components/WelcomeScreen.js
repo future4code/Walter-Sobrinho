@@ -2,15 +2,14 @@ import React from "react";
 import styled from "styled-components";
 
 const CorpoWScreen = styled.div`
-  display: flex;
-  height: 60%;
-  width: 60%;
+  display: grid;
   justify-content: center;
+  height: 90vh;
 `;
 
 const ImagemWScreen = styled.img`
-  height: 100%;
-  width: 100%;
+  height: 60vh;
+  width: 60vw;
 `;
 
 class WelcomeScreen extends React.Component {
