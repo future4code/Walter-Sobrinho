@@ -1,11 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { CardContainer, NomeContainer } from "./style";
 
-export function MatchesCard() {
+export function MatchesCard(props) {
+  useEffect(() => {});
+
   return (
-    <CardContainer elevation={50}>
-      <img src="https://picsum.photos/75/100" alt="foto" />
-      <NomeContainer variant="h4">Friedrich Nietzsche</NomeContainer>
+    <CardContainer elevation={25}>
+      <img src={props.matchPhoto} alt="foto" height="100" width="75" />
+      <NomeContainer variant="h4">
+        {props.matchName}, {props.matchAge}
+      </NomeContainer>
     </CardContainer>
   );
 }

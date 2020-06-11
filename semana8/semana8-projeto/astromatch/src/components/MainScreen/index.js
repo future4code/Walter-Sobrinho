@@ -8,38 +8,29 @@ import {
   MatchButton,
   DetalhesContainer,
   DescriçãoTxt,
+  FotoPerfil,
 } from "./style";
 import { Header } from "../Header/";
-import axios from "axios";
 
 export function MainScreen(props) {
-  const [profile, changeProfile] = useState({});
-
-  useEffect(() => {
-    axios
-      .get(
-        "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/:aluno/person"
-      )
-      .then((response) => {
-        changeProfile(response.data.profile);
-      });
-  }, []);
-
   return (
     <ScreenContainer>
       <MatchBox>
         <div>
           <DetalhesPerfil>
             <ContainerBotoes>
-              <RejectButton />
-              <MatchButton />
+              <RejectButton onClick={props.fetchProfiles} />
+              <MatchButton onClick={() => props.funcaoLike(props.profile.id)} />
             </ContainerBotoes>
             <DetalhesContainer>
-              <DescriçãoTxt variant="h4">{profile.name}</DescriçãoTxt>
-              <DescriçãoTxt>{profile.bio}</DescriçãoTxt>
+              <DescriçãoTxt variant="h4">
+                {props.profile.name}, {props.profile.age}
+              </DescriçãoTxt>
+              <DescriçãoTxt>{props.profile.bio}</DescriçãoTxt>
             </DetalhesContainer>
           </DetalhesPerfil>
         </div>
+        <FotoPerfil src={props.profile.photo} />
         <Header definePagina={props.definePagina} />
       </MatchBox>
     </ScreenContainer>

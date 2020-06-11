@@ -3,9 +3,10 @@ import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 
 export const CardContainer = styled(Paper)`
-  height: 15%;
+  height: 20vh;
+  width: 90%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
   && {
     background-color: #212121;

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Card from "@material-ui/core/Card";
+import Button from "@material-ui/core/Button";
 
 export const ScreenContainer = styled(Card)`
   width: 99vw;
@@ -12,7 +13,6 @@ export const ScreenContainer = styled(Card)`
   }
   display: flex;
   flex-direction: column;
-  align-items: center;
 `;
 
 export const MatchesBox = styled.div`
@@ -23,7 +23,6 @@ export const MatchesBox = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-
   z-index: 1;
   border: 3px solid #b71c1c;
   border-radius: 20px;
@@ -35,4 +34,19 @@ export const MatchesBox = styled.div`
   @media screen and (max-width: 500px) {
     width: 100%;
   }
+`;
+
+export const BotaoReseta = styled(Button)`
+  margin: auto;
+  width: 97%;
+  && {
+    background-color: #f2f2f2;
+  }
+`;
+
+export const MatchesDisplay = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
 `;
