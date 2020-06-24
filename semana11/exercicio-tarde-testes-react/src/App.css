@@ -1,0 +1,28 @@
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.post-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+  width: 300px;
+  justify-content: center;
+  align-items: center;
+  margin: 16px 0;
+}
+
+p {
+  margin: 0;
+}
+
+#error-msg {
+  background-color: red;
+  color: white;
+  text-shadow: 2px 2px #2f2f2f;
+  font-size: 1.2em;
+  padding: 10px;
+}
