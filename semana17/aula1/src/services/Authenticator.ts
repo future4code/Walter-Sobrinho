@@ -1,7 +1,7 @@
 import * as jwt from "jsonwebtoken";
 
 export class Authenticator {
-  private static EXPIRES_IN = "1min";
+  private static EXPIRES_IN = "10min";
   public generateToken(input: AuthenticationData): string {
     const token = jwt.sign(
       {
@@ -13,6 +13,14 @@ export class Authenticator {
       }
     );
     return token;
+  }
+
+  public verifyToken(token: string): AuthenticationData {
+    const payload = jwt.verify(token, process.env.JWT_KEY as string) as any;
+    const result = {
+      id: payload.id,
+    };
+    return result;
   }
 }
 

@@ -25,4 +25,20 @@ export class UserDatabase {
       })
       .into("User");
   }
+
+  public async userInfo(email: string): Promise<any> {
+    const result = await this.connection
+      .select("*")
+      .from("User")
+      .where({ email });
+
+    return result[0];
+  }
+
+  public async getUserById(id: string): Promise<any> {
+    const result = await this.connection.select("*").from("User").where({ id });
+
+    console.log("id:" + result[0]);
+    return result[0];
+  }
 }

@@ -3,6 +3,11 @@ import dotenv from "dotenv";
 import { AddressInfo } from "net";
 import { UserDatabase } from "./data/UserDatabase";
 import { IdGenerator } from "./services/IdGenerator";
+import { signUp } from "./endpoints/signUp";
+import { login } from "./endpoints/login";
+import { Authenticator } from "./services/Authenticator";
+import { getProfile } from "./endpoints/getProfile";
+
 dotenv.config();
 
 const app = express();
@@ -21,6 +26,12 @@ const newUser = async (): Promise<any> => {
   );
   return user;
 };
+
+app.post("/signup", signUp);
+
+app.post("/login", login);
+
+app.get("/user/profile", getProfile);
 
 const server = app.listen(process.env.PORT || 3003, () => {
   if (server) {
