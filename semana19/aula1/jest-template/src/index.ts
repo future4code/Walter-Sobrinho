@@ -2,7 +2,7 @@ import User from "./User";
 import express, { Request, Response } from "express";
 import dotenv from "dotenv";
 import { AddressInfo } from "net";
-import { PostRouter } from "./routes/postRouter";
+import { PostDatabase } from "./PostDatabase";
 
 dotenv.config();
 
@@ -94,8 +94,6 @@ export function verifyAge(casino: Casino, users: CasinoUser[]): Result {
     },
   };
 }
-
-app.use("/post", PostRouter);
 
 const server = app.listen(process.env.PORT || 3003, () => {
   if (server) {

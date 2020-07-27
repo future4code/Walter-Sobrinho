@@ -7,8 +7,8 @@ import CasinoUser, {
   LOCATION,
 } from "../src";
 import "jest-extended";
-import { Post } from "../src/models/Post";
-import { PostDatabase } from "../src/data/PostDatabase";
+import { BaseDatabase } from "../src/BaseDatabase";
+import { PostDatabase } from "../src/PostDatabase";
 
 describe("testing funcion checkPurchase", () => {
   test("testing balance > value", () => {
@@ -238,18 +238,41 @@ describe("testing veryAge function", () => {
     expect(result.americans.allowed.length).toBe(2);
   });
 
-  describe("testing class post functions", () => {
+  const postDb = new PostDatabase();
+
+  describe("testing class from Post functions", () => {
+    afterAll(async () => {
+      await postDb.cleanTable();
+      await BaseDatabase.destroyConnection();
+    });
+
     test("if we can write a post and check it", async () => {
       const post = {
         id: "new post",
-        title: "coffee time",
-        content:
+        description: "coffee time",
+        photo:
           "https://images.unsplash.com/photo-1517231925375-bf2cb42917a5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80",
       };
-      const postDb = new PostDatabase();
-      const createPosts = postDb.createPosts(post);
+      await postDb.createPost(post.id, post.description, post.photo);
+      const postById = await postDb.getPostById("new post");
 
-      const postFromDatabase = await getPostById(post.id);
+      expect(postById.photo).toBe("coffee time");
     });
+  });
+
+  test("testing if an error comes out of trying to create duplicate posts", async () => {
+    try {
+      const post = {
+        id: "new post",
+        description: "coffee time",
+        photo:
+          "https://images.unsplash.com/photo-1517231925375-bf2cb42917a5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80",
+      };
+
+      await postDb.createPost(post.id, post.photo, post.description);
+      await postDb.createPost(post.id, post.photo, post.description);
+    } catch (e) {
+      expect(e).not.toBe(undefined);
+    }
   });
 });
