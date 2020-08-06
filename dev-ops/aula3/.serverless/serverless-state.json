@@ -11,6 +11,7 @@
       "runtime": "nodejs12.x",
       "region": "us-east-1",
       "versionFunctions": true,
+      "remoteFunctionData": null,
       "environment": {
         "DB_HOST": "ec2-18-229-236-15.sa-east-1.compute.amazonaws.com",
         "DB_USER": "julian_walter_sobrinho",
@@ -167,7 +168,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/aula-serverlessframework-walter-julian/dev/1596654798787-2020-08-05T19:13:18.787Z/aula-serverlessframework-walter-julian.zip"
+                "S3Key": "serverless/aula-serverlessframework-walter-julian/dev/1596737088032-2020-08-06T18:04:48.032Z/aula-serverlessframework-walter-julian.zip"
               },
               "FunctionName": "aula-serverlessframework-walter-julian-dev-app",
               "Handler": "src/lambda.handler",
@@ -321,7 +322,7 @@
               "MethodResponses": []
             }
           },
-          "ApiGatewayDeployment1596654778948": {
+          "ApiGatewayDeployment1596737065088": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -516,37 +517,12 @@
         "versionLogicalId": "AppLambdaVersion2DtX5ogUETjkcBEv1iLTiet22u3UuWCIo1Ru9muo"
       }
     },
-    "configValidationMode": "warn",
     "serviceFilename": "serverless.yml",
     "layers": {},
-    "initialServerlessConfig": {
-      "plugins": {
-        "$ref": "$[\"service\"][\"plugins\"]"
-      },
-      "service": {
-        "$ref": "$[\"service\"][\"serviceObject\"]"
-      },
-      "provider": {
-        "$ref": "$[\"service\"][\"provider\"]"
-      },
-      "custom": {
-        "$ref": "$[\"service\"][\"custom\"]"
-      },
-      "functions": {
-        "$ref": "$[\"service\"][\"functions\"]"
-      },
-      "package": {
-        "artifactDirectoryName": "serverless/aula-serverlessframework-walter-julian/dev/1596654798787-2020-08-05T19:13:18.787Z"
-      },
-      "layers": {
-        "$ref": "$[\"service\"][\"layers\"]"
-      },
-      "configValidationMode": "warn"
-    },
     "isDashboardMonitoringPreconfigured": false
   },
   "package": {
-    "artifactDirectoryName": "serverless/aula-serverlessframework-walter-julian/dev/1596654798787-2020-08-05T19:13:18.787Z",
+    "artifactDirectoryName": "serverless/aula-serverlessframework-walter-julian/dev/1596737088032-2020-08-06T18:04:48.032Z",
     "artifact": ""
   }
 }
