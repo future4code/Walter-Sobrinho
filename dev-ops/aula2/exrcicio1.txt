@@ -1,0 +1,11 @@
+1. 
+	a. Não, acho que entendi tudo.
+	b. 400, "Missing input";
+	c. 400, "Missing input";
+	d. 400, "Missing email";
+	e. 400, "Invalid password";
+	f. 200, "User is correct";
+	g. No "if" que avalia o email e retorna um statusCode caso ele esteja incorreto ou inválido.
+	h. Um objeto que possua a propriedade "info" e que, dentro da propriedade "info", tenha um "name", um "email", e um "password".
+
+	
